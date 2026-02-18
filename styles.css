@@ -392,7 +392,6 @@ footer {
    LANGUAGE TOGGLE FOR TWO LANGUAGES
    ═══════════════════════════════════════════════════════ */
 
-/* Make the nav a flex row so the toggle can sit on the right */
 nav {
     display: flex;
     align-items: center;
@@ -400,7 +399,6 @@ nav {
     padding: 1rem 1.5rem;
 }
 
-/* The pill-shaped toggle lives at the right end of the nav */
 .lang-toggle {
     display: flex;
     align-items: center;
@@ -413,7 +411,6 @@ nav {
     margin-left: 1.5rem;
 }
 
-/* Each button/label inside the pill */
 .lang-btn {
     display: inline-block;
     padding: 0.25rem 0.7rem;
@@ -426,10 +423,8 @@ nav {
     transition: background 0.2s, color 0.2s;
     line-height: 1.4;
     white-space: nowrap;
-    cursor: pointer;
 }
 
-/* The currently selected language */
 .lang-btn.active {
     background: #ffffff;
     color: #1f3d7a;
@@ -437,25 +432,17 @@ nav {
     cursor: default;
 }
 
-/* Hover on the inactive option */
 a.lang-btn:hover {
     color: #ffffff;
     background: rgba(255, 255, 255, 0.2);
     text-decoration: none;
 }
 
-/* Keyboard focus */
 a.lang-btn:focus-visible {
     outline: 2px solid #ffffff;
     outline-offset: 2px;
 }
 
-/* Pages with no Amharic version — single EN label, no interactivity */
-.lang-toggle--en-only .lang-btn.active {
-    cursor: default;
-}
-
-/* Mobile: stack nav links and keep toggle visible */
 @media (max-width: 768px) {
     nav {
         flex-wrap: wrap;
@@ -463,11 +450,7 @@ a.lang-btn:focus-visible {
         padding: 0.75rem 1rem;
     }
 
-    nav ul {
-        gap: 0.75rem;
-    }
+    nav ul { gap: 0.75rem; }
 
-    .lang-toggle {
-        margin-left: auto;
-    }
+    .lang-toggle { margin-left: auto; }
 }
