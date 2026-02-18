@@ -1,19 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="$if(amharic)$am$else$en$endif$">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>$title$</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="./index.html" $if(page)$$if(page.about)$class="active"$endif$$endif$>About</a></li>
-            <li><a href="./tizita-diaspora.html" $if(page)$$if(page.projects-main)$class="active"$endif$$endif$>Tizita Diaspora</a></li>
-            <li><a href="./community-resources.html" $if(page)$$if(page.projects-alt)$class="active"$endif$$endif$>Community Resources</a></li>
-            <li><a href="./cv.html" $if(page)$$if(page.cv)$class="active"$endif$$endif$>CV</a></li>
+            $if(amharic)$
+            <li><a href="./index.html">ስለ እኔ</a></li>
+            <li><a href="./tizita-diaspora-am.html">ትዝታ ዲያስፖራ</a></li>
+            <li><a href="./community-resources.html">Community Resources</a></li>
+            <li><a href="./cv.html">CV</a></li>
+            $else$
+            <li><a href="./index.html">About</a></li>
+            <li><a href="./tizita-diaspora.html">Tizita Diaspora</a></li>
+            <li><a href="./community-resources.html">Community Resources</a></li>
+            <li><a href="./cv.html">CV</a></li>
+            $endif$
         </ul>
+
+        <!-- Language toggle — only shown on pages that have an Amharic version -->
+        $if(lang-en)$
+        <div class="lang-toggle">
+            <span class="lang-btn active">EN</span>
+            <a href="./$lang-en$-am.html" class="lang-btn">አማ</a>
+        </div>
+        $endif$
+        $if(lang-am)$
+        <div class="lang-toggle">
+            <a href="./$lang-am$.html" class="lang-btn">EN</a>
+            <span class="lang-btn active">አማ</span>
+        </div>
+        $endif$
     </nav>
 
     <main>
@@ -21,7 +43,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Eden Mekonen. All rights reserved.</p>
+        <p>$if(amharic)$&copy; 2026 Eden Mekonen. መብቱ በሕግ የተጠበቀ ነው።$else$&copy; 2026 Eden Mekonen. All rights reserved.$endif$</p>
     </footer>
 </body>
 </html>
